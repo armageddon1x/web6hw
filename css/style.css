@@ -5,6 +5,10 @@ body{
 	color: white;
 }
 
+div{
+	margin: 20px auto;
+}
+
 #square{
 	width: 200px;
 	height: 200px;
@@ -12,14 +16,14 @@ body{
 }
 
 #circle{
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	background: green;
 	border-radius: 50%;
 }
 
 #rectangle{
-	width: 200px;
-	height: 100px;
+	width: 300px;
+	height: 150px;
 	background: red;
 }

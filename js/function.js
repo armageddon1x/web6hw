@@ -63,10 +63,37 @@ be used.*/
 
 //jQuery Functions
 
-/*There are some jQuery function that can do cool 
+/*There are some jQuery functions that can do cool 
 things*/
 
-$();
+//.fadeOut/.fadeIn 
+//fades an object out or in (take time in 
+//milliseconds)
+
+$("#square").fadeOut(1500);
+
+//.ready (only takes functions)
+//checks to see if object has loaded
+
+//.css (changes css, takes strings as
+//[css properties in (“css property”)(“css value”)])
+//changes css properties
+
+//.animate({property to animate: a value})
+//animates an object
+
+/*.ready is an object loading event. for a user event,
+something like .click is used*/
+
+//.click
+//when you click on an element, something happens
+
+//.mouseOver
+//when you mouse over an element, something happens
+
+//.keyUp
+//when you press a key up in an element, something 
+//happens
 
 //*************************************************
 //*************************************************
