@@ -4,3 +4,22 @@ body{
 	text-align: center;
 	color: white;
 }
+
+#square{
+	width: 200px;
+	height: 200px;
+	background: blue;
+}
+
+#circle{
+	width: 100px;
+	height: 100px;
+	background: green;
+	border-radius: 50%;
+}
+
+#rectangle{
+	width: 200px;
+	height: 100px;
+	background: red;
+}
