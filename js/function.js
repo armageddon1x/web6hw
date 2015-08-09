@@ -135,8 +135,33 @@ $(document).ready(function(){
 	//end
 });
 
-//this presents 3 buttons
 
+//this presents 3 buttons
+goat=false;
+car=true;
+
+$(document).ready(function(){
+	//beginning
+	$(".button").click(function(){
+		if (".button"===1) {
+			alert("One More Chance!");
+		};
+	});
+	//end
+});
+
+//this button makes a mini rave
+
+$(document).ready(function(){
+	//beginning
+	$(".rave").click(function(){
+		var red=Math.floor((Math.random()*255));
+		var green=Math.floor((Math.random()*255));
+		var blue=Math.floor((Math.random()*255));
+		$("body").css("background","rgb(red,green,blue)");
+	});
+	//end
+});
 //*************************************************
 //*************************************************
 //*************************************************
