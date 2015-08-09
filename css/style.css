@@ -7,43 +7,47 @@ body{
 
 div{
 	margin: 20px auto;
+	display: inline-block;
 }
 
 #square{
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	background: blue;
 }
 
 #circle{
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	background: green;
 	border-radius: 50%;
 }
 
 #rectangle{
-	width: 300px;
-	height: 150px;
+	width: 75px;
+	height: 50px;
 	background: red;
 	position: relative;
 }
 
 #new_square{
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	background: yellow;
 }
 
 #new_circle{
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	background: brown;
 	border-radius: 50%;
 }
 
 #new_rectangle{
-	width: 300px;
-	height: 150px;
+	width: 75px;
+	height: 50px;
 	background: purple;
+	position:relative;
 }
+
+.button{}

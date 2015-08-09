@@ -93,8 +93,7 @@ $(document).ready(function(){
 //animates an object
 
 $(document).ready(function(){
-	$("#rectangle").animate({
-		right:"100px",},1000);
+	$("#rectangle").animate({top:"25px",},1000);
 });
 
 /*.ready is an object loading event. for a user event,
@@ -116,12 +115,27 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#new_circle").mouseover(function(){
-		$("#new_circle").css("width","400px");
+		$("#new_circle").css("width","100px");
 	});
 });
 
 //*************************************************
 
+//jQuery Functions
+
+//this moves a rectange to the left then to the right
+$(document).ready(function(){
+	//beginning
+	$("#new_rectangle").click(function(){
+		$("#new_rectangle").animate({
+			right:"100px",}, 3000);
+		$("#new_rectangle").animate({
+			right:"-500px",}, 1000);
+	});
+	//end
+});
+
+//this presents 3 buttons
 
 //*************************************************
 //*************************************************
