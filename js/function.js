@@ -96,8 +96,8 @@ $(document).ready(function(){
 	$("#rectangle").animate({top:"25px",},1000);
 });
 
-/*.ready is an object loading event. for a user event,
-something like .click is used*/
+/*.ready is an object loading event. for a user 
+event, something like .click is used*/
 
 //.click
 //when you click on an element, something happens
@@ -123,7 +123,8 @@ $(document).ready(function(){
 
 //jQuery Functions
 
-//this moves a rectange to the left then to the right
+//this moves a rectange to the left then to the 
+//right
 $(document).ready(function(){
 	//beginning
 	$("#new_rectangle").click(function(){
@@ -151,49 +152,39 @@ $(document).ready(function(){
 	$(".button").click(function(){
 		//goat is 1, car is 0
 		var goat=Math.round(Math.random());
-		console.log(goat);
-		console.log(!goat);
-		//if
+		//if statement
+		/*if flag is true, then it turns false to signify 
+		its already been clicked once. if its false then 
+		it goes to the else statement*/
 		if (firstflag1) {
 			firstflag1=false;
+			//alert for true flag
 			alert("Try Again!");
+			//assigning a goat to one of the two doors
 			b2=goat;
 			b3=!goat;
+			/*after the first door has been clicked, the 
+			other doors are clicked, and whether they have
+			a goat or not is determined here*/ 
 			$(".button2").click(function(){
 				if (goat===1) {
-					alert("you won a goat");
+					alert("You Won a Goat!");
 				}else{
-					alert("you won a car");
+					alert("You Won a Car!");
 				};
 			});
 			$(".button3").click(function(){
 				if (goat===0) {
-					alert("you won a goat");
+					alert("You Won a Goat!");
 				}else{
-					alert("you won a car");
+					alert("You Won a Car!");
 				};
 			});
-		}else{
-			alert("Already Used!");
 		};
-		//end of if
+		//end of if statement
 	});
 
 	
-//this button makes a mini rave
-$(document).ready(function(){
-	$(".rave").click(function(){
-		//variables for random colors
-		var r=Math.floor((Math.random()*255));
-		var g=Math.floor((Math.random()*255));
-		var b=Math.floor((Math.random()*255));
-		//combined colors in rgb format
-		var color="rgb("+r+","+g+","+b+")";
-		//color changer
-		$("body").css("background",color);
-	});
-});
-
 //this button makes a mini rave
 $(document).ready(function(){
 	$(".rave").click(function(){
