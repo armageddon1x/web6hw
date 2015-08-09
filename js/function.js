@@ -143,12 +143,11 @@ $(document).ready(function(){
 	//flags to determine whether button was pressed 
 	//for first time
 
-	//variables to store goat value
-	var firstflag1=true;				var b1=0;
-	var firstflag2=true;				var b2=0;
-	var firstflag3=true;				var b3=0;
-
 	//flags
+	var firstflag1=true;
+	var firstflag2=true;
+	var firstflag3=true;
+	
 	$(".button").click(function(){
 		//goat is 1, car is 0
 		var goat=Math.round(Math.random());
@@ -161,14 +160,14 @@ $(document).ready(function(){
 			b2=goat;
 			b3=!goat;
 			$(".button2").click(function(){
-				if (b2==goat) {
+				if (goat===1) {
 					alert("you won a goat");
 				}else{
 					alert("you won a car");
 				};
 			});
 			$(".button3").click(function(){
-				if (b3==goat) {
+				if (goat===0) {
 					alert("you won a goat");
 				}else{
 					alert("you won a car");
@@ -179,6 +178,21 @@ $(document).ready(function(){
 		};
 		//end of if
 	});
+
+	
+//this button makes a mini rave
+$(document).ready(function(){
+	$(".rave").click(function(){
+		//variables for random colors
+		var r=Math.floor((Math.random()*255));
+		var g=Math.floor((Math.random()*255));
+		var b=Math.floor((Math.random()*255));
+		//combined colors in rgb format
+		var color="rgb("+r+","+g+","+b+")";
+		//color changer
+		$("body").css("background",color);
+	});
+});
 
 //this button makes a mini rave
 $(document).ready(function(){
@@ -203,7 +217,7 @@ $(document).ready(function(){
 		});
 	});
 });
-
+});
 
 
 //*************************************************
