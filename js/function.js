@@ -137,34 +137,50 @@ $(document).ready(function(){
 
 
 //this presents 3 buttons
-goat=false;
-car=true;
 
 $(document).ready(function(){
 	//beginning
+	//flags to determine whether button was pressed 
+	//for first time
+
+	//variables to store goat value
+	var firstflag1=true;				var b1=0;
+	var firstflag2=true;				var b2=0;
+	var firstflag3=true;				var b3=0;
+
+	//flags
 	$(".button").click(function(){
-		if (".button"===1) {
-			alert("One More Chance!");
+		//goat is 1, car is 0
+		var goat=Math.round(Math.random());
+		console.log(goat);
+		console.log(!goat);
+		//if
+		if (firstflag1) {
+			firstflag1=false;
+			alert("Try Again!");
+			b2=goat;
+			b3=!goat;
+			$(".button2").click(function(){
+				if (b2==goat) {
+					alert("you won a goat");
+				}else{
+					alert("you won a car");
+				};
+			});
+			$(".button3").click(function(){
+				if (b3==goat) {
+					alert("you won a goat");
+				}else{
+					alert("you won a car");
+				};
+			});
+		}else{
+			alert("Already Used!");
 		};
+		//end of if
 	});
-	//end
-});
 
 //this button makes a mini rave
-/*
-		var r=Math.floor((Math.random()*255));
-		var g=Math.floor((Math.random()*255));
-		var b=Math.floor((Math.random()*255));
-		var color="rgb("r+","+g+","+b+")"
-$(document).ready(function(){
-	//beginning
-	$(".rave").click(function(){
-		$("body").css("background","color");
-	});
-	//end
-});
-*/
-
 $(document).ready(function(){
 	$(".rave").click(function(){
 		//variables for random colors
@@ -173,20 +189,10 @@ $(document).ready(function(){
 		var b=Math.floor((Math.random()*255));
 		//combined colors in rgb format
 		var color="rgb("+r+","+g+","+b+")";
-		console.log(color);
+		//color changer
 		$("body").css("background",color);
 	});
 });
-
-for(i=0;i<1000;i++){
-		var r=Math.floor((Math.random()*255));
-		var g=Math.floor((Math.random()*255));
-		var b=Math.floor((Math.random()*255));
-		//combined colors in rgb format
-		var color="rgb("+r+","+g+","+b+")";
-		console.log(color);
-		$("body").css("background",color);
-};
 
 //this makes a blinking banana that stretches
 $(document).ready(function(){
