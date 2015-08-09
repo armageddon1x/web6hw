@@ -66,21 +66,36 @@ be used.*/
 /*There are some jQuery functions that can do cool 
 things*/
 
+//.ready (only takes functions)
+//checks to see if object has loaded
+
+$(document).ready(function(){
+	alert("jQuery is loaded");
+});
+
 //.fadeOut/.fadeIn 
 //fades an object out or in (take time in 
 //milliseconds)
 
-$("#square").fadeOut(1500);
-
-//.ready (only takes functions)
-//checks to see if object has loaded
+$(document).ready(function(){
+	$("#square").fadeOut(1500);
+});
 
 //.css (changes css, takes strings as
 //[css properties in (“css property”)(“css value”)])
 //changes css properties
 
+$(document).ready(function(){
+	$("#circle").css("background","black");
+});
+
 //.animate({property to animate: a value})
 //animates an object
+
+$(document).ready(function(){
+	$("#rectangle").animate({
+		right:"100px",},1000);
+});
 
 /*.ready is an object loading event. for a user event,
 something like .click is used*/
@@ -88,14 +103,26 @@ something like .click is used*/
 //.click
 //when you click on an element, something happens
 
+$(document).ready(function(){
+	$("#new_square").click(function(){
+		$("#new_square").fadeOut(2000);
+		$("#new_square").fadeIn(2000);
+	});
+});
+
+
 //.mouseOver
 //when you mouse over an element, something happens
 
-//.keyUp
-//when you press a key up in an element, something 
-//happens
+$(document).ready(function(){
+	$("#new_circle").mouseover(function(){
+		$("#new_circle").css("width","400px");
+	});
+});
 
 //*************************************************
+
+
 //*************************************************
 //*************************************************
 //*************************************************

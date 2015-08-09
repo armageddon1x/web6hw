@@ -26,4 +26,24 @@ div{
 	width: 300px;
 	height: 150px;
 	background: red;
+	position: relative;
+}
+
+#new_square{
+	width: 200px;
+	height: 200px;
+	background: yellow;
+}
+
+#new_circle{
+	width: 200px;
+	height: 200px;
+	background: brown;
+	border-radius: 50%;
+}
+
+#new_rectangle{
+	width: 300px;
+	height: 150px;
+	background: purple;
 }
