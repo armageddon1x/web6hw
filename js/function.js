@@ -151,17 +151,55 @@ $(document).ready(function(){
 });
 
 //this button makes a mini rave
-
+/*
+		var r=Math.floor((Math.random()*255));
+		var g=Math.floor((Math.random()*255));
+		var b=Math.floor((Math.random()*255));
+		var color="rgb("r+","+g+","+b+")"
 $(document).ready(function(){
 	//beginning
 	$(".rave").click(function(){
-		var red=Math.floor((Math.random()*255));
-		var green=Math.floor((Math.random()*255));
-		var blue=Math.floor((Math.random()*255));
-		$("body").css("background","rgb(red,green,blue)");
+		$("body").css("background","color");
 	});
 	//end
 });
+*/
+
+$(document).ready(function(){
+	$(".rave").click(function(){
+		//variables for random colors
+		var r=Math.floor((Math.random()*255));
+		var g=Math.floor((Math.random()*255));
+		var b=Math.floor((Math.random()*255));
+		//combined colors in rgb format
+		var color="rgb("+r+","+g+","+b+")";
+		console.log(color);
+		$("body").css("background",color);
+	});
+});
+
+for(i=0;i<1000;i++){
+		var r=Math.floor((Math.random()*255));
+		var g=Math.floor((Math.random()*255));
+		var b=Math.floor((Math.random()*255));
+		//combined colors in rgb format
+		var color="rgb("+r+","+g+","+b+")";
+		console.log(color);
+		$("body").css("background",color);
+};
+
+//this makes a blinking banana that stretches
+$(document).ready(function(){
+	$("#banana").mouseover(function(){
+		$("#banana").animate({width:"+=200px"},2000);
+		$("#banana").fadeIn(function(){
+			$("#banana").css("border","2px solid black");
+		});
+	});
+});
+
+
+
 //*************************************************
 //*************************************************
 //*************************************************

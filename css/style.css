@@ -70,6 +70,7 @@ div{
 	position: relative;
 	top: 1px;
 }
+
 .rave{
 	background: rgb(50,50,50);
 	color: white;
@@ -89,4 +90,12 @@ div{
 .rave:active{
 	position: relative;
 	top: 1px;
+}
+
+#banana{
+	width: 200px;
+	height: 100px;
+	border-radius: 50%;
+	background: yellow;
+	position: relative;
 }
