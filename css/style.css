@@ -10,6 +10,8 @@ div{
 	display: inline-block;
 }
 
+p{padding: 0px;}
+
 #square{
 	width: 50px;
 	height: 50px;
@@ -90,7 +92,7 @@ div{
 .button2:active{
 	position: relative;
 	top: 1px;
-	
+
 }
 .button3{
 	background: rgb(50,50,50);
@@ -113,15 +115,38 @@ div{
 	top: 1px;
 }
 
-.rave{
+.button4{
 	background: rgb(50,50,50);
 	color: white;
-	width: 150px;
+	width: 100px;
 	height: 50px;
 	border: rgb(100,100,100) 2px solid;
 	border-bottom: rgb(200,200,200) 2px solid;
 	border-right: rgb(200,200,200) 2px solid;
 	font-size: 14px;
+}
+.button4:hover{
+	background: rgb(100,100,100);
+	border: rgb(200,200,200) 2px solid;
+	border-bottom: rgb(50,50,50) 2px solid;
+	border-right: rgb(50,50,50) 2px solid;
+}
+.button4:active{
+	position: relative;
+	top: 1px;
+
+}
+
+.rave{
+	background: rgb(50,50,50);
+	color: white;
+	width: 200px;
+	height: 50px;
+	border: rgb(100,100,100) 2px solid;
+	border-bottom: rgb(200,200,200) 2px solid;
+	border-right: rgb(200,200,200) 2px solid;
+	font-size: 14px;
+	margin: 0 auto;
 }
 .rave:hover{
 	background: rgb(100,100,100);

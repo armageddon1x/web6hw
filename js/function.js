@@ -16,12 +16,13 @@ path*/
 
 //call
 //$()
+
 /*this is the way to call jQuery functions. the $() is 
 actually the main jQuery function that contains the 
 library. by using the $(), you can call other 
 functions as well*/
 
-//add document
+//add element
 //$(document)
 /*elements to be used by the function go inside the
 parentheses. the elements are in CSS syntax*/
@@ -39,6 +40,7 @@ manipuate it easily, as shown above*/
 
 //add snippet (check if document is ready)
 //$(document).ready()
+
 /*you can add events to make your elements have 
 interactivity. for example, the .ready() checks the 
 document to see if all the elements in the document 
@@ -53,6 +55,17 @@ function or an argument*/
 			//thing to be done
 			//});
 
+/*the anonymous function allows other functions to 
+be executed. specifically, the anonymous function 
+allows a function to be passed as an argument to 
+another function*/
+
+$(document).ready(function(){
+	//$(element).snippet(function(){
+		//$(element).snippet();
+	//});
+});
+
 /*that's a full jQuery function! the document is 
 checked to see if the elements are loaded. once it is, 
 the code inside will run. this is good to use when you 
@@ -61,7 +74,7 @@ be used.*/
 
 //*************************************************
 
-//jQuery Functions
+//Some Sammple jQuery Functions
 
 /*There are some jQuery functions that can do cool 
 things*/
@@ -121,7 +134,9 @@ $(document).ready(function(){
 
 //*************************************************
 
-//jQuery Functions
+//jQuery Function Exercises
+
+//*************************************************
 
 //this moves a rectange to the left then to the 
 //right
@@ -136,13 +151,19 @@ $(document).ready(function(){
 	//end
 });
 
+//*************************************************
 
 //this presents 3 buttons
 
+//original
 $(document).ready(function(){
-	//beginning
+	//beginning of function
+
 	//flags to determine whether button was pressed 
 	//for first time
+
+	//goat is 1, car is 0
+	var goat=Math.round(Math.random());
 
 	//flags
 	var firstflag1=true;
@@ -150,22 +171,14 @@ $(document).ready(function(){
 	var firstflag3=true;
 	
 	$(".button").click(function(){
-		//goat is 1, car is 0
-		var goat=Math.round(Math.random());
-		//if statement
-		/*if flag is true, then it turns false to signify 
-		its already been clicked once. if its false then 
-		it goes to the else statement*/
 		if (firstflag1) {
 			firstflag1=false;
 			//alert for true flag
 			alert("Try Again!");
-			//assigning a goat to one of the two doors
-			b2=goat;
-			b3=!goat;
 			/*after the first door has been clicked, the 
 			other doors are clicked, and whether they have
 			a goat or not is determined here*/ 
+
 			$(".button2").click(function(){
 				if (goat===1) {
 					alert("You Won a Goat!");
@@ -173,6 +186,7 @@ $(document).ready(function(){
 					alert("You Won a Car!");
 				};
 			});
+
 			$(".button3").click(function(){
 				if (goat===0) {
 					alert("You Won a Goat!");
@@ -180,40 +194,101 @@ $(document).ready(function(){
 					alert("You Won a Car!");
 				};
 			});
+
+		}else{
+			alert("Already Tried!");
 		};
 		//end of if statement
 	});
-
-	
-//this button makes a mini rave
-$(document).ready(function(){
-	$(".rave").click(function(){
-		//variables for random colors
-		var r=Math.floor((Math.random()*255));
-		var g=Math.floor((Math.random()*255));
-		var b=Math.floor((Math.random()*255));
-		//combined colors in rgb format
-		var color="rgb("+r+","+g+","+b+")";
-		//color changer
-		$("body").css("background",color);
+	//end of function
+	$(".button4").click(function(){
+		firstflag1=true;
+		firstflag2=true;
+		firstflag3=true;
+		goat=Math.round(Math.random());
 	});
 });
+
+//original
+
+	//button
+	$(".button4").click(function(){
+		firstflag1=true;
+		firstflag2=true;
+		firstflag3=true;
+		goat=Math.round(Math.random());
+	});
+	//end
+
+
+//*************************************************
+
+//this button makes a mini rave
+$(document).ready(function(){
+	//timer f
+	var timer;
+	var r, g, b, rc, gc, bc, color, word;
+	var rave_on=true;
+
+var airhorn=document.createElement('audio');
+ airhorn.setAttribute('src',
+ 	'sounds/airhorn.mp3');
+
+    
+
+
+        
+
+	$(".rave").click(function(){
+		if (rave_on===true) {
+		timer=setInterval( function(){
+			swapColor();
+		} , 100);
+		rave_on=false;
+		console.log("true");
+	}else if(rave_on===false){
+		$("body").css("background","gray");
+		$("body").css("color","white");
+		$(".rave").val("Start The Rave Again!!!");
+		airhorn.pause();
+		rave_on=true;
+		console.log("false");
+		clearInterval(timer);
+	};
+	});
+
+	function swapColor(){
+		//defining colors for the background
+		r=Math.floor((Math.random()*255));
+		g=Math.floor((Math.random()*255));
+		b=Math.floor((Math.random()*255));
+		//defining colors for the words
+		rc=Math.floor((Math.random()*255));
+		gc=Math.floor((Math.random()*255));
+		bc=Math.floor((Math.random()*255));
+		//combined colors in rgb format
+		color="rgb("+r+","+g+","+b+")";
+		word="rgb("+rc+","+gc+","+bc+")";
+		//color changer
+		airhorn.play();
+		$("body").css("background",color);
+		$("body").css("color",word);
+		$(".rave").val("Stop The Rave...");
+	}
+});
+
+
+//*************************************************
 
 //this makes a blinking banana that stretches
 $(document).ready(function(){
 	$("#banana").mouseover(function(){
-		$("#banana").animate({width:"+=200px"},2000);
+		$("#banana").animate({width:"+=100px"},1000);
 		$("#banana").fadeIn(function(){
 			$("#banana").css("border","2px solid black");
 		});
 	});
 });
-});
-
-
-//*************************************************
-//*************************************************
-//*************************************************
 
 //*************************************************
 //The End
