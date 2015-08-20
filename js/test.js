@@ -106,3 +106,34 @@ $(document).ready(function(){
 		}else{alert("last");};
 	});
 //trial
+
+$(".button").click(function(){
+		if (firstflag1) {
+			firstflag1=false;
+			//alert for true flag
+			alert("Try Again!");
+			/*after the first door has been clicked, the 
+			other doors are clicked, and whether they have
+			a goat or not is determined here*/ 
+
+			$(".button2").click(function(){
+				if (goat===1) {
+					alert("You Won a Goat!");
+				}else{
+					alert("You Won a Car!");
+				};
+			});
+
+			$(".button3").click(function(){
+				if (goat===0) {
+					alert("You Won a Goat!");
+				}else{
+					alert("You Won a Car!");
+				};
+			});
+
+		}else{
+			alert("Already Tried!");
+		};
+		//end of if statement
+	});

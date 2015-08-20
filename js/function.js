@@ -47,7 +47,7 @@ document to see if all the elements in the document
 are available. the code inside wont run until the 
 document is ready.*/
 
-/*this snippets, or methods, can take either a 
+/*these snippets, or methods, can take either a 
 function or an argument*/
 
 //add anonymous function
@@ -159,104 +159,102 @@ $(document).ready(function(){
 $(document).ready(function(){
 	//beginning of function
 
-	//flags to determine whether button was pressed 
-	//for first time
-
 	//goat is 1, car is 0
 	var goat=Math.round(Math.random());
 
 	//flags
-	var firstflag1=true;
-	var firstflag2=true;
-	var firstflag3=true;
-	
-	$(".button").click(function(){
-		if (firstflag1) {
-			firstflag1=false;
-			//alert for true flag
-			alert("Try Again!");
-			/*after the first door has been clicked, the 
-			other doors are clicked, and whether they have
-			a goat or not is determined here*/ 
+	var flag1=true;
+	var flag2=true;
+	var flag3=true;
 
+	//triggers everything on button click on button 1
+	/*i tried to get the function to work but i couldnt
+	get the proper if statements to make it work. i will
+	have to revisit this at another time.*/
+	$(".button").click(function(){
+		if (flag1) {
+			//flags turn false
+			flag1=false;
+			flag2=false;
+			flag3=false
+			alert("Try Again!");
+			console.log("try");
+			//assigns value to the other buttons
 			$(".button2").click(function(){
 				if (goat===1) {
 					alert("You Won a Goat!");
+					console.log("goat1");
 				}else{
 					alert("You Won a Car!");
+					console.log("car1");
 				};
 			});
-
-			$(".button3").click(function(){
+		$(".button3").click(function(){
 				if (goat===0) {
 					alert("You Won a Goat!");
+					console.log("goat2");
 				}else{
 					alert("You Won a Car!");
+					console.log("car2");
 				};
 			});
-
 		}else{
 			alert("Already Tried!");
+			console.log("did");
 		};
-		//end of if statement
 	});
-	//end of function
+
+	//supposed to reset the flags but the button click
+	//above repeats for each reset.
 	$(".button4").click(function(){
-		firstflag1=true;
-		firstflag2=true;
-		firstflag3=true;
-		goat=Math.round(Math.random());
+		var goat=Math.round(Math.random());
+		flag1=true;
+		flag2=true;
+		flag3=true;
+		console.log("reset");
 	});
+
 });
 
-//original
-
-	//button
-	$(".button4").click(function(){
-		firstflag1=true;
-		firstflag2=true;
-		firstflag3=true;
-		goat=Math.round(Math.random());
-	});
-	//end
 
 
 //*************************************************
 
 //this button makes a mini rave
 $(document).ready(function(){
-	//timer f
+	//timer that stores the interval of the execution
+	//of the swap color function
 	var timer;
 	var r, g, b, rc, gc, bc, color, word;
 	var rave_on=true;
 
-var airhorn=document.createElement('audio');
- airhorn.setAttribute('src',
- 	'sounds/airhorn.mp3');
+	//audio variable that stores airhorn
+	var airhorn=document.createElement('audio');
+	airhorn.setAttribute('src','sounds/airhorn.mp3');
 
-    
-
-
-        
-
+	//click to start or stop rave
 	$(".rave").click(function(){
 		if (rave_on===true) {
 		timer=setInterval( function(){
 			swapColor();
-		} , 100);
+		},100);
 		rave_on=false;
-		console.log("true");
+
 	}else if(rave_on===false){
+		//resets page to what it was before
 		$("body").css("background","gray");
 		$("body").css("color","white");
 		$(".rave").val("Start The Rave Again!!!");
+		//pauses audio and sets it to the beginning
 		airhorn.pause();
+		airhorn.currentTime=0
 		rave_on=true;
-		console.log("false");
+		//stops the setInterval
 		clearInterval(timer);
-	};
+		};
 	});
 
+	//color swap function
 	function swapColor(){
 		//defining colors for the background
 		r=Math.floor((Math.random()*255));
